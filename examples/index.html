@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../alertify.css" />
+  </head>
+  <body>
+    <button onclick="fireNotification({title:'Succesfully upload!', text: 'The file is ready to use', options: [{text:'View file', callback: ()=>alert('hello')}], actions: [{text:'Google', callback: ()=>window.location.href=('https:/\/google.com')}] })"> Show notification </button>
+    <button onclick="fireAlert({title:'Accepted', info:'You\'re accepted in this platform', options: [{text:'Redirect to google', callback: ()=>{window.location.href='https:/\/google.com'}},{ text: 'Close', secondary: true, callback: closeAlert }] })">Show alert</button>
+    <button onclick="fireAlert({title:'Failed', info:'An error ocurred.', options: [{ text: 'Close', secondary: true, callback: closeAlert }] })">Show other alert</button>
+    <div id="alertify">
+      <div class="alertify-card">
+      </div>
+    </div>
+    <div id="alertify-notification">
+
+        <!--
+        <div class="notification">
+            <div class="content">
+                <h1 class="title">Succesfully upload!</h1>
+                <p class="info">The file is ready to use</p>
+                <div class="actions">
+                    <button>Show file</button>
+                </div>
+            </div>
+            <div class="options">
+                <button>Close</button>
+            </div>
+        </div>  -->
+
+
+    </div>
+  </body>
+
+  <script src="../alertify.js"></script>
+  <script>
+    initAlertify();
+  </script>
+
+  <style>
+    body {
+        background-color: #fff;
+    }
+
+    @media (prefers-color-scheme: dark){
+        body{ background-color: #2e2e2e}
+    }
+  </style>
+</html>
